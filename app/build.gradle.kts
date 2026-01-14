@@ -6,9 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.task_image"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.task_image"
@@ -50,7 +48,21 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
+    
+    // ViewModel Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
+    
+    // CameraX dependencies
+    implementation("androidx.camera:camera-camera2:1.5.2")
+    implementation("androidx.camera:camera-lifecycle:1.5.2")
+    implementation("androidx.camera:camera-view:1.5.2")
+
+    // ML Kit Object Detection
+    implementation("com.google.mlkit:object-detection:17.0.2")
+
+    // Accompanist Permissions
+    implementation("com.google.accompanist:accompanist-permissions:0.37.3")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
